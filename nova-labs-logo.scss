@@ -1,0 +1,362 @@
+/* nova-labs-logo.scss */
+
+$nova-labs-grey: #59595C;
+$nova-labs-orange: #F36E3D;
+$opacity: 1;
+
+$scaleX:1;
+$scaleY:#{$scaleX};
+$scaleZ:#{$scaleX};
+
+html {
+  
+/*
+	background: url('nova-labs-gear.svg') no-repeat center center fixed; 
+	-webkit-background-size: 500px;
+	-moz-background-size: 500px;
+	-o-background-size: 500px;
+	background-size: 500px;
+*/
+	background-color: #ffffff;
+
+}
+
+figure[gear] {
+	position:absolute;
+	width:398px;
+	height:398px;
+	background:#{$nova-labs-grey};
+
+	-moz-border-radius: 250px;
+	-webkit-border-radius: 250px;
+	border-radius: 250px;
+
+	top:127px;
+	left:433px;
+	margin-left:0px;
+	margin-top:0px;
+
+	opacity:#{$opacity};
+}
+
+
+@mixin gear-tooth($theta, $top, $left) {
+	position:absolute;
+	top:$top;
+	left:$left;
+	border-bottom: 65px solid #{$nova-labs-grey};
+	border-left: 18px solid transparent;
+	border-right: 18px solid transparent;
+	width:30px;
+	height:0px;
+	margin-left:0px;
+	margin-top:0px;
+
+	perspective: -1200px;
+	opacity:#{$opacity};
+
+	display:inline-block;
+
+	-moz-transform:rotate($theta);
+	-webkit-transform:rotate($theta);
+	-o-transform:rotate($theta);
+	-ms-transform:rotate($theta);
+	/* filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1.5); */
+}
+
+figure[tooth1] {
+	@include gear-tooth(236deg, 289px, -22px);
+}
+
+figure[tooth2] {
+	@include gear-tooth(267deg, 181px, -57px);
+}
+
+figure[tooth3] {
+	@include gear-tooth(298deg, 68px, -35px);
+}
+
+figure[tooth4] {
+	@include gear-tooth(328deg, -21px, 42px);
+}
+
+figure[tooth5] {
+	@include gear-tooth(357deg, -57px, 150px);
+}
+
+figure[tooth6] {
+	@include gear-tooth(385deg, -34px, 267px);
+}
+
+figure[tooth7] {
+	@include gear-tooth(415deg, 43px, 353px);
+}
+
+figure[tooth8] {
+	@include gear-tooth(447deg, 150px, 390px);
+}
+
+figure[tooth9] {
+	@include gear-tooth(475deg, 266px, 365px);
+}
+
+figure[tooth10] {
+	@include gear-tooth(507deg, 352px, 288px);
+}
+
+figure[tooth11] {
+	@include gear-tooth(535deg, 388px, 180px);
+}
+
+figure[gear-open] {
+	position:fixed;
+	top: 415px;
+	left: 497px;
+	border-bottom:120px solid white;
+	border-left: 15px solid transparent;
+	border-right: 79px solid transparent;
+	width:74px;
+	height:0px;
+	margin-left:0px;
+	margin-top:0px;
+	-moz-transform:rotate(41deg);
+	-webkit-transform:rotate(41deg);
+	-o-transform:rotate(41deg);
+	-ms-transform:rotate(41deg);
+	opacity:#{$opacity};
+
+}
+
+figure[gear-hollow] {
+	position:fixed;
+	padding: 0px 0px 0px 0px;
+	width:1000px;
+	top:172px;
+	left:454px;
+	
+	width:276px;
+	height:276px;
+	background:white;
+	-moz-border-radius: 150px;
+	-webkit-border-radius: 150px;
+	border-radius: 150px;
+	opacity:#{$opacity};
+
+}
+
+figure[gear-orange] {
+	position:fixed;
+	padding: 0px 0px 0px 0px;
+	width:1000px;
+	top:178px;
+	left:460px;
+	
+	width:264px;
+	height:264px;
+	background:#{$nova-labs-orange};
+	-moz-border-radius: 150px;
+	-webkit-border-radius: 150px;
+	border-radius: 150px;
+	opacity:#{$opacity};
+
+}
+
+figure[gear-inner] {
+	position:fixed;
+	padding: 0px 0px 0px 0px;
+	width:1000px;
+	top:201px;
+	left:481px;
+	
+	width:219px;
+	height:219px;
+	background:white;
+	-moz-border-radius: 150px;
+	-webkit-border-radius: 150px;
+	border-radius: 150px;
+	opacity:#{$opacity};
+
+}
+
+figure[gear-wick] {
+	position:fixed;
+	padding: 0px 0px 0px 0px;
+	width:1000px;
+	top:449px;
+	left:364px;
+	background:#{$nova-labs-orange};
+	width:222px;
+	height:15px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+
+	border-bottom: 10px solid #{$nova-labs-orange};
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+
+	-webkit-transform:rotate(-63.7deg);
+	-o-transform:rotate(-63.7deg);
+	-moz-transform:rotate(-63.7deg);
+	-ms-transform:rotate(-63.7deg);
+	opacity:#{$opacity};
+}
+
+figure[gear-wick-cut] {
+	position:fixed;
+	padding: 0px 0px 0px 0px;
+	width:1000px;
+	top:504px;
+	left:420px;
+	background:white;
+	width:123px;
+	height:50px;
+
+
+	-webkit-transform:rotate(-63.7deg);
+	-o-transform:rotate(-63.7deg);
+	-moz-transform:rotate(-63.7deg);
+	-ms-transform:rotate(-63.7deg);
+	opacity:#{$opacity};
+}
+
+@mixin gear-thread($theta, $top, $left) {
+	position:fixed;
+	top:$top;
+	left:$left;
+	background:#{$nova-labs-grey};
+	border-bottom: 15px solid #{$nova-labs-grey};
+	border-left: 15px solid transparent;
+	border-right: 18px solid transparent;
+	width:63px;
+	height:3px;
+
+	margin-left:0px;
+	margin-top:0px;
+
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-o-border-radius:15px;
+	-ms-border-radius:15px;
+
+	perspective: -1200px;
+	opacity:1;
+
+	-moz-transform:rotate($theta);
+	-webkit-transform:rotate($theta);
+	-o-transform:rotate($theta);
+	-ms-transform:rotate($theta);
+	/* filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1.5); */
+}
+
+@mixin gear-thread-end($theta, $top, $left) {
+	position:fixed;
+	top:$top;
+	left:$left;
+	background:#{$nova-labs-grey};
+
+	width:13px;
+	height:13px;
+
+	margin-left:0px;
+	margin-top:0px;
+
+	perspective: -1200px;
+	opacity:1;
+
+	-moz-transform:rotate($theta);
+	-webkit-transform:rotate($theta);
+	-o-transform:rotate($theta);
+	-ms-transform:rotate($theta);
+	/* filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1.5); */
+}
+
+figure[gear-thread1] {
+	@include gear-thread(20deg, 498px, 496px);
+}
+
+figure[gear-thread1-leftend] {
+	@include gear-thread-end(50deg, 488px, 496px);
+}
+
+figure[gear-thread1-rightend] {
+	@include gear-thread-end(50deg, 513px, 577px);
+}
+
+figure[gear-thread2] {
+	@include gear-thread(20deg, 524px, 482px);
+}
+
+figure[gear-thread2-leftend] {
+	@include gear-thread-end(45deg, 514px, 483px);
+}
+
+figure[gear-thread2-rightend] {
+	@include gear-thread-end(50deg, 539px, 564px);
+}
+
+figure[gear-thread3] {
+	@include gear-thread(20deg, 550px, 468px);
+}
+
+figure[gear-thread3-leftend] {
+	@include gear-thread-end(45deg, 540px, 469px);
+}
+
+figure[gear-thread3-rightend] {
+	@include gear-thread-end(50deg, 565px, 550px);
+}
+
+figure[gear-thread4] {
+	@include gear-thread(20deg, 576px, 454px);
+}
+
+figure[gear-thread4-leftend] {
+	@include gear-thread-end(45deg, 566.5px, 455px);
+}
+
+figure[gear-thread4-rightend] {
+	@include gear-thread-end(50deg, 592px, 536px);
+}
+
+#gear-div {
+
+	position: absolute;  
+	left: 0%; 
+	-webkit-animation: spinY 6s infinite;
+	-moz-animation: spinY 6s infinite;
+	-ms-animation: spinY 6s infinite;
+	-o-animation: spinY 6s infinite;
+	
+	-webkit-transform-style:preserve3d;
+	-moz-transform-style:preserve3d;
+	-ms-transform-style:preserve3d;
+	-o-transform-style:preserve3d;
+
+	position:fixed;
+	padding: 0px 0px 0px 0px;
+	width:1000px;
+
+	-webkit-transform:scale(#{$scaleX},#{$scaleY});
+	-o-transform:scale(#{$scaleX},#{$scaleY});
+	-moz-transform:scale(#{$scaleX},#{$scaleY});
+	-ms-transform:scale(#{$scaleX},#{$scaleY});
+}
+
+@-webkit-keyframes spinY
+{  
+0%   {-webkit-transform: rotateY(0deg); -webkit-transform-origin: 0% 75% 0%;}  
+100% {-webkit-transform: rotateY(360deg); -webkit-transform-origin: 0% 75% 0%;}  
+} 
+
+@-moz-keyframes spinY
+{  
+0%   {-moz-transform: rotateY(0deg); -moz-transform-origin: 0% 0% 0%;}  
+100% {-moz-transform: rotateY(360deg); -moz-transform-origin: 0% 0% 0%;}  
+}
+
+@-ms-keyframes spinY
+{  
+0%   {-ms-transform: rotateY(0deg); -ms-transform-origin: 0% 0% 0%;}  
+100% {-ms-transform: rotateY(360deg); -ms-transform-origin: 0% 0% 0%;}  
+}
+
