@@ -3,59 +3,72 @@
 $nova-labs-grey: #59595C;
 $nova-labs-orange: #F36E3D;
 $opacity: 1;
+$position: absolute;
 
-$scaleX:1;
+$scaleX: .5;
 $scaleY:#{$scaleX};
 $scaleZ:#{$scaleX};
 
-html {
-  
-/*
-	background: url('nova-labs-gear.svg') no-repeat center center fixed; 
-	-webkit-background-size: 500px;
-	-moz-background-size: 500px;
-	-o-background-size: 500px;
-	background-size: 500px;
-*/
-	background-color: #ffffff;
+body {
 
+	/*
+		background: url('nova-labs-gear.svg') no-repeat center center fixed; 
+			-webkit-background-size: 500px;
+		-moz-background-size: 500px;
+		-o-background-size: 500px;
+		background-size: 500px;
+*/
+
+	-webkit-transform:scale(#{$scaleX},#{$scaleY});
+
+	-webkit-transform: perspective(1100px);
+	-moz-transform:perspective(1100px);
+	-ms-transform:perspective(1100px);
+	-o-transform:perspective(1100px);
+
+	-webkit-transform-style: preserve-3d;	
+	-moz-transform-style:preserve3d;
+	-ms-transform-style:preserve3d;
+	-o-transform-style:preserve3d;
+
+	background-color: #ffffff;
 }
 
+
 figure[gear] {
-	position:absolute;
+	position:#{$position};
 	width:398px;
 	height:398px;
-	background:#{$nova-labs-grey};
-
-	-moz-border-radius: 250px;
-	-webkit-border-radius: 250px;
-	border-radius: 250px;
-
 	top:127px;
 	left:433px;
 	margin-left:0px;
 	margin-top:0px;
+
+	background:#{$nova-labs-grey};
+
+	-moz-border-radius: 250px;
+	-webkit-border-radius: 250px;
 
 	opacity:#{$opacity};
 }
 
 
 @mixin gear-tooth($theta, $top, $left) {
-	position:absolute;
+	position:#{$position};
 	top:$top;
 	left:$left;
-	border-bottom: 65px solid #{$nova-labs-grey};
-	border-left: 18px solid transparent;
-	border-right: 18px solid transparent;
 	width:30px;
 	height:0px;
 	margin-left:0px;
 	margin-top:0px;
 
-	perspective: -1200px;
-	opacity:#{$opacity};
+	border-bottom: 65px solid #{$nova-labs-grey};
+	border-left: 18px solid transparent;
+	border-right: 18px solid transparent;
 
-	display:inline-block;
+	perspective: -1200px;
+
+	opacity:#{$opacity};
 
 	-moz-transform:rotate($theta);
 	-webkit-transform:rotate($theta);
@@ -109,7 +122,7 @@ figure[tooth11] {
 }
 
 figure[gear-open] {
-	position:fixed;
+	position:#{$position};
 	top: 415px;
 	left: 497px;
 	border-bottom:120px solid white;
@@ -119,18 +132,19 @@ figure[gear-open] {
 	height:0px;
 	margin-left:0px;
 	margin-top:0px;
+
 	-moz-transform:rotate(41deg);
 	-webkit-transform:rotate(41deg);
 	-o-transform:rotate(41deg);
 	-ms-transform:rotate(41deg);
+
 	opacity:#{$opacity};
 
 }
 
 figure[gear-hollow] {
-	position:fixed;
+	position:#{$position};
 	padding: 0px 0px 0px 0px;
-	width:1000px;
 	top:172px;
 	left:454px;
 	
@@ -145,9 +159,8 @@ figure[gear-hollow] {
 }
 
 figure[gear-orange] {
-	position:fixed;
+	position:#{$position};
 	padding: 0px 0px 0px 0px;
-	width:1000px;
 	top:178px;
 	left:460px;
 	
@@ -162,9 +175,8 @@ figure[gear-orange] {
 }
 
 figure[gear-inner] {
-	position:fixed;
+	position:#{$position};
 	padding: 0px 0px 0px 0px;
-	width:1000px;
 	top:201px;
 	left:481px;
 	
@@ -179,9 +191,8 @@ figure[gear-inner] {
 }
 
 figure[gear-wick] {
-	position:fixed;
+	position:#{$position};
 	padding: 0px 0px 0px 0px;
-	width:1000px;
 	top:449px;
 	left:364px;
 	background:#{$nova-labs-orange};
@@ -202,9 +213,8 @@ figure[gear-wick] {
 }
 
 figure[gear-wick-cut] {
-	position:fixed;
+	position:#{$position};
 	padding: 0px 0px 0px 0px;
-	width:1000px;
 	top:504px;
 	left:420px;
 	background:white;
@@ -220,7 +230,7 @@ figure[gear-wick-cut] {
 }
 
 @mixin gear-thread($theta, $top, $left) {
-	position:fixed;
+	position:#{$position};
 	top:$top;
 	left:$left;
 	background:#{$nova-labs-grey};
@@ -239,7 +249,7 @@ figure[gear-wick-cut] {
 	-ms-border-radius:15px;
 
 	perspective: -1200px;
-	opacity:1;
+	opacity:#{$opacity};
 
 	-moz-transform:rotate($theta);
 	-webkit-transform:rotate($theta);
@@ -249,7 +259,7 @@ figure[gear-wick-cut] {
 }
 
 @mixin gear-thread-end($theta, $top, $left) {
-	position:fixed;
+	position:#{$position};
 	top:$top;
 	left:$left;
 	background:#{$nova-labs-grey};
@@ -261,7 +271,7 @@ figure[gear-wick-cut] {
 	margin-top:0px;
 
 	perspective: -1200px;
-	opacity:1;
+	opacity:#{$opacity};
 
 	-moz-transform:rotate($theta);
 	-webkit-transform:rotate($theta);
@@ -318,45 +328,81 @@ figure[gear-thread4-rightend] {
 	@include gear-thread-end(50deg, 592px, 536px);
 }
 
-#gear-div {
+#gear-front {
 
-	position: absolute;  
+	position: #{$position};
+	width:500px;
+	height:500px;
+
+	display:block;
+	//display: inline-block;
 	left: 0%; 
-	-webkit-animation: spinY 6s infinite;
-	-moz-animation: spinY 6s infinite;
-	-ms-animation: spinY 6s infinite;
-	-o-animation: spinY 6s infinite;
-	
-	-webkit-transform-style:preserve3d;
-	-moz-transform-style:preserve3d;
-	-ms-transform-style:preserve3d;
-	-o-transform-style:preserve3d;
 
-	position:fixed;
-	padding: 0px 0px 0px 0px;
-	width:1000px;
+	-webkit-transform-origin: 550px 0%;
 
 	-webkit-transform:scale(#{$scaleX},#{$scaleY});
 	-o-transform:scale(#{$scaleX},#{$scaleY});
 	-moz-transform:scale(#{$scaleX},#{$scaleY});
 	-ms-transform:scale(#{$scaleX},#{$scaleY});
+	transform:scale(#{$scaleX},#{$scaleY});
+
+	-webkit-animation: spinY 3s infinite linear;
+	-moz-animation: spinY 3s infinite linear;
+	-ms-animation: spinY 3s infinite linear;
+	-o-animation: spinY 3s infinite linear;
+	animation: spinY 3s infinite linear;
+
+	padding: 0px 0px 0px 0px;
 }
+
+
+#gear-back{
+
+	position: #{$position};
+	width:500px;
+	height:500px;
+	left: 0%; 
+
+	-webkit-transform-origin: 550px 0%;
+
+	-webkit-transform:translate3d( 0%,0%,50px);
+
+	-webkit-transform:scale(#{$scaleX},#{$scaleY});
+	-o-transform:scale(#{$scaleX},#{$scaleY});
+	-moz-transform:scale(#{$scaleX},#{$scaleY});
+	-ms-transform:scale(#{$scaleX},#{$scaleY});
+
+	-webkit-animation: spinY 3s infinite linear;
+	-moz-animation: spinY 3s infinite linear;
+	-ms-animation: spinY 3s infinite linear;
+	-o-animation: spinY 3s infinite linear;
+	
+	padding: 0px 0px 0px 0px;
+
+}
+
 
 @-webkit-keyframes spinY
 {  
-0%   {-webkit-transform: rotateY(0deg); -webkit-transform-origin: 0% 75% 0%;}  
-100% {-webkit-transform: rotateY(360deg); -webkit-transform-origin: 0% 75% 0%;}  
+0% {	
+	-webkit-transform: rotateY(0deg);
+	-webkit-transform-origin: 0% 0% 0%;
+}  
+100% {
+	-webkit-transform: rotateY(-360deg);
+	-webkit-transform-origin: 0% 0% 0%;
+	}  
 } 
 
 @-moz-keyframes spinY
 {  
 0%   {-moz-transform: rotateY(0deg); -moz-transform-origin: 0% 0% 0%;}  
-100% {-moz-transform: rotateY(360deg); -moz-transform-origin: 0% 0% 0%;}  
+100% {-moz-transform: rotateY(-360deg); -moz-transform-origin: 0% 0% 0%;}  
 }
 
 @-ms-keyframes spinY
 {  
 0%   {-ms-transform: rotateY(0deg); -ms-transform-origin: 0% 0% 0%;}  
-100% {-ms-transform: rotateY(360deg); -ms-transform-origin: 0% 0% 0%;}  
+100% {-ms-transform: rotateY(-360deg); -ms-transform-origin: 0% 0% 0%;}  
 }
 
